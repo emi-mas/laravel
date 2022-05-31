@@ -8,6 +8,7 @@ use App\Http\Controllers\ZaikoController;
 use App\Http\Middleware\TimezoneBeforeMiddleware;
 use App\Http\Middleware\TimezoneAfterMiddleware;
 use App\Http\Controllers\ShiireController;
+use App\Http\Controllers\ItemController;
 
 
 /*
@@ -34,3 +35,13 @@ Route::get('zaiko', [ZaikoController::class, 'index'])
     ->middleware(TimezoneAfterMiddleware::class);
 Route::get('shiire', [ShiireController::class, 'index']);
 Route::post('shiire/create', [ShiireController::class, 'create']);
+// 商品管理
+Route::get('item', [ItemController::class, 'index']);
+Route::get('item/search', [ItemController::class, 'search']);
+Route::post('item/search', [ItemController::class, 'search']);
+Route::get('item/add', [ItemController::class, 'add']);
+Route::post('item/add', [ItemController::class, 'add']);
+Route::get('item/edit', [ItemController::class, 'edit']);
+Route::post('item/edit', [ItemController::class, 'edit']);
+Route::get('item/delete', [ItemController::class, 'delete']);
+Route::post('item/delete', [ItemController::class, 'delete']);
